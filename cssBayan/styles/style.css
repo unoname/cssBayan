@@ -63,3 +63,27 @@ input {
 .accordion_label:has(input:hover) h2{
   color:darkcyan;
 }
+
+/* Mobile styles */
+@media only screen and (max-width: 819.99px) { 
+  body {
+    font-size: 1rem; 
+    cursor: pointer; 
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 820px) and (max-width: 1179.99px) { 
+  body {
+    font-size: 1.2rem; 
+    cursor: pointer; 
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1180px) {  
+  body {
+    font-size: 1.6rem; 
+    cursor: default; 
+  }
+}

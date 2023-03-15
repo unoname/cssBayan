@@ -1,4 +1,6 @@
 .accordion {
+	display: flex;
+	flex-direction: column;
   width: 80%;  
   margin: 3% auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -8,10 +10,11 @@
 .image {
 	object-fit: cover;
   display: block;
+	order: 1;
   max-width: 50vh;
   height: 0;
-  margin: 0 auto;
-  padding-bottom: 0;
+  margin: 0 auto;	
+  margin-top: 2rem;
   opacity: 0;
   scale: 0;
   transition: opacity, scale, max-height, 0.3s;
@@ -19,20 +22,28 @@
 input {
 	display: none;
 }
-
-.icon {
+h2 {
 	display: inline-block;
+	margin-left: 0.8rem;
+	order: 0;
+}
+.icon {
+	display: block;
+	order: 2;
 	height: 3vh;
   width: 3vh;
   opacity: 0;
 	margin: 0;
-	padding: 0;
+  padding: 0;
   transition: opacity, rotate, 0.4s;
 }
 
 .accordion_label {
+	overflow: hidden;
+	display: flex;
+  flex-wrap: wrap;
 	cursor: pointer;
-	display: block;
+	
 	background-color: bisque;
 }
 .accordion_label:not(:first-child) {
@@ -67,9 +78,20 @@ input {
 /* Mobile styles */
 @media only screen and (max-width: 819.99px) { 
   body {
-    font-size: 1rem; 
-    cursor: pointer; 
+    font-size: 0.1rem; 
+    cursor: none; 
   }
+	.image {
+		max-width: 70vw;
+		order:2;
+	
+	}
+	.accordion h2 {	
+		font-size: 02rem !important;
+	}
+	.icon {
+		visibility: hidden;
+}
 }
 
 /* Tablet styles */
@@ -87,3 +109,5 @@ input {
     cursor: default; 
   }
 }
+
+ 
